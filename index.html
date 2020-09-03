@@ -10,7 +10,15 @@
 </body>
 </html>
 </br>
+<img id="bulbtog" src="./bulb_off.jpg" src2="./bulb_on.jpg"> 
+</br>
+<button id="toggle">Включить</button>
+</br>
+</br>
+</br>
 <img id="bulb" src="./bulb.png"> 
+</br>
+
 <style>
 #toggle {
     background: blue;
@@ -19,6 +27,9 @@
 #bulb {
     width: 100px;
 }
+#bulbtog {
+    width: 100px;
+    }
 </style>
 </br>
 <input type="range" id="bulbRange" min="0" max="1" step="0.1" value="0">
@@ -26,6 +37,7 @@
 <label for="volume">intensivity</label>
 </br>
 <script>
+    
      bulb.style.opacity = '0';
     "use strict"
 const bulbRange = document.getElementById("bulbRange");
@@ -33,4 +45,22 @@ bulbRange.addEventListener("change", () => {
     const bulb = document.getElementById("bulb");
     bulb.style.opacity = bulbRange.value;
 });
-</script>
+
+    const bulbToggle = document.getElementById("toggle");
+bulbToggle.addEventListener("click", () => {
+    
+    const bulb = document.getElementById("bulbtog");
+    if (bulbToggle.innerText=="Включить")
+    {
+        bulbToggle.innerText = "Выключить"; 
+       bulbtog.src="./bulb_on.jpg";
+       
+        
+    } else {
+        bulbToggle.innerText = "Включить";
+        bulbtog.src="./bulb_off.jpg"
+    }
+
+    return
+});
+    </script>
